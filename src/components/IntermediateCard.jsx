@@ -40,3 +40,5 @@ export default function IntermediateCard() {
     </Box>
   );
 }
+
+// TODO Fetch data and display like on the beginnerCard

@@ -9,8 +9,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { Link, useNavigate } from "react-router-dom";
-// import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Level() {
@@ -31,17 +30,17 @@ export default function Level() {
             <List>
               <ListItem disablePadding onClick={() => {navigate('/beginner')}}>
                   <ListItemButton >
-                    <ListItemText primary="Beginner" />
+                    <ListItemText primary="Beginner exercises" />
                   </ListItemButton>
               </ListItem>
               <ListItem disablePadding onClick={() => {navigate('/intermediate')}}>
                   <ListItemButton component="a">
-                    <ListItemText primary="Intermediate" />
+                    <ListItemText primary="Intermediate exercises" />
                   </ListItemButton>
               </ListItem>
               <ListItem disablePadding onClick={() => {navigate('/expert')}}>
                   <ListItemButton component="a">
-                    <ListItemText primary="Expert" />
+                    <ListItemText primary="Expert exercises" />
                   </ListItemButton>
               </ListItem>
             </List>
