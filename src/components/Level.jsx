@@ -9,6 +9,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import { Link } from "react-router-dom";
 
 
 export default function Level() {
@@ -20,27 +21,31 @@ export default function Level() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>
-            Fitness Level
-          </Typography>
+          <Typography>Fitness Level</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <nav aria-label="secondary mailbox folders">
             <List>
               <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemText primary="Beginner" />
-                </ListItemButton>
+                <Link to="/beginner">
+                  <ListItemButton>
+                    <ListItemText primary="Beginner" />
+                  </ListItemButton>
+                </Link>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
-                  <ListItemText primary="Intermediate" />
-                </ListItemButton>
+                <Link to="/intermediate">
+                  <ListItemButton component="a" href="#simple-list">
+                    <ListItemText primary="Intermediate" />
+                  </ListItemButton>
+                </Link>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
-                  <ListItemText primary="Expert" />
-                </ListItemButton>
+                <Link to="/expert">
+                  <ListItemButton component="a" href="#simple-list">
+                    <ListItemText primary="Expert" />
+                  </ListItemButton>
+                </Link>
               </ListItem>
             </List>
           </nav>

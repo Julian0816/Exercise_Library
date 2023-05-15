@@ -118,12 +118,7 @@ function Root(props) {
         }}
       >
         <Toolbar />
-        <Typography paragraph>
-         
-        </Typography>
-        <Typography paragraph>
-          
-        </Typography>
+        <Typography paragraph></Typography>
       </Box>
     </Box>
   );
