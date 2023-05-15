@@ -13,6 +13,7 @@ import Typography from "@mui/material/Typography";
 
 import Level from "../components/Level";
 import Muscle from "../components/Muscle";
+import Type from "../components/Type";
 
 
 const drawerWidth = 240;
@@ -34,6 +35,9 @@ function Root(props) {
       </List>
       <List>
         <Muscle />
+      </List>
+      <List>
+        <Type />
       </List>
       <Divider />
     </div>
@@ -63,7 +67,7 @@ function Root(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Find an exercise
+            Exercise Library
           </Typography>
         </Toolbar>
       </AppBar>
