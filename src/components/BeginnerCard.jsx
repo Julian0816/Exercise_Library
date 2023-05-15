@@ -14,7 +14,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const BeginnerCard = () => {
   const [exercises, setExercises] = useState([])
 
-  const apiKey = "u9+OyAQ0PbdbYEq81OwemA==d4pudHaaIIFJ5JLV"; // TODO fix the issue with the env variable not working
+  const apiKey = ""; // TODO fix the issue with the env variable not working
 
   useEffect(() => {
     axios
