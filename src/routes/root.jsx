@@ -14,6 +14,11 @@ import Typography from "@mui/material/Typography";
 import Level from "../components/Level";
 import Muscle from "../components/Muscle";
 import Type from "../components/Type";
+import BeginnerCard from "../components/BeginnerCard";
+import IntermediateCard from "../components/IntermediateCard";
+import ExpertCard from "../components/ExpertCard";
+
+import { Outlet } from "react-router-dom";
 
 
 const drawerWidth = 240;
@@ -118,6 +123,7 @@ function Root(props) {
         }}
       >
         <Toolbar />
+        <Outlet />
         <Typography paragraph></Typography>
       </Box>
     </Box>

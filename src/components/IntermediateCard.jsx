@@ -18,28 +18,22 @@ const bull = (
 const card = (
   <React.Fragment>
     <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Intermediate
-      </Typography>
       <Typography variant="h5" component="div">
-        be{bull}nev{bull}o{bull}lent
+        Exercise Name
       </Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-        adjective
+      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+        Type of exercise
       </Typography>
-      <Typography variant="body2">
-        well meaning and kindly.
-        <br />
-        {'"a benevolent smile"'}
-      </Typography>
+      <Typography variant="body2">Musclse name</Typography>
+      <Typography variant="body2">Equipment</Typography>
     </CardContent>
     <CardActions>
-      <Button size="small">Learn More</Button>
+      <Button size="small">Instructions</Button>
     </CardActions>
   </React.Fragment>
 );
 
-export default function Intermediate() {
+export default function IntermediateCard() {
   return (
     <Box sx={{ minWidth: 275 }}>
       <Card variant="outlined">{card}</Card>

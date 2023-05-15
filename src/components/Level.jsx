@@ -9,10 +9,13 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+// import { useState, useEffect } from "react";
 
 
 export default function Level() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Accordion>
@@ -26,26 +29,20 @@ export default function Level() {
         <AccordionDetails>
           <nav aria-label="secondary mailbox folders">
             <List>
-              <ListItem disablePadding>
-                <Link to="/beginner">
-                  <ListItemButton>
+              <ListItem disablePadding onClick={() => {navigate('/beginner')}}>
+                  <ListItemButton >
                     <ListItemText primary="Beginner" />
                   </ListItemButton>
-                </Link>
               </ListItem>
-              <ListItem disablePadding>
-                <Link to="/intermediate">
-                  <ListItemButton component="a" href="#simple-list">
+              <ListItem disablePadding onClick={() => {navigate('/intermediate')}}>
+                  <ListItemButton component="a">
                     <ListItemText primary="Intermediate" />
                   </ListItemButton>
-                </Link>
               </ListItem>
-              <ListItem disablePadding>
-                <Link to="/expert">
-                  <ListItemButton component="a" href="#simple-list">
+              <ListItem disablePadding onClick={() => {navigate('/expert')}}>
+                  <ListItemButton component="a">
                     <ListItemText primary="Expert" />
                   </ListItemButton>
-                </Link>
               </ListItem>
             </List>
           </nav>

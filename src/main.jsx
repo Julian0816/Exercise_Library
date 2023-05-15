@@ -3,7 +3,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import ErrorPage from "./error-page";
-import LevelCard from "./components/BeginnerCard";
+import BeginnerCard from "./components/BeginnerCard";
+import IntermediateCard from "./components/IntermediateCard";
+import ExpertCard from "./components/ExpertCard";
+
 
 const router = createBrowserRouter([
   {
@@ -13,20 +16,20 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/beginner",
-        element: <Root />,
-        errorElement: <LevelCard />,
+        element: <BeginnerCard />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/intermediate",
-        element: <Root />,
-        errorElement: <LevelCard />,
+        element: <IntermediateCard />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/expert",
-        element: <Root />,
-        errorElement: <LevelCard />,
+        element: <ExpertCard />,
+        errorElement: <ErrorPage />,
       },
-    ]
+    ],
   },
 ]);
 
