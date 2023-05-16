@@ -13,7 +13,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { styled } from "@mui/system";
 
-
 const IntermediateCard = () => {
   const [exercises, setExercises] = useState([]);
 
@@ -45,15 +44,14 @@ const IntermediateCard = () => {
       });
   }, []);
 
-
   const StyledTitle = styled(Typography)`
-    color: #ead30c;
+    color: #536b78;
     font-weight: bold;
     text-align: center;
   `;
 
   const StyledCard = styled(Card)`
-    background-color: #f5f5f5;
+    background-color: #cee5f2;
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
@@ -63,29 +61,45 @@ const IntermediateCard = () => {
     }
   `;
 
+  const accordionStyle = {
+    backgroundColor: "#ACCBE1", // Purple color
+    color: "#FFFFFF", // White text color for better contrast
+  };
+
+  const StyledCardContent = styled(CardContent)`
+    text-align: left;
+  `;
+
+  const spanStyle = {
+    fontWeight: "bold",
+  };
+
   return (
     <Box sx={{ minWidth: 275 }}>
       <Grid container spacing={2}>
         {exercises.map((exercise, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
             <StyledCard variant="outlined">
-              <CardContent>
+              <StyledCardContent>
                 <Typography variant="h6" component="div">
-                  <StyledTitle>Level - {exercise.difficulty}</StyledTitle>
+                  <StyledTitle>
+                    <span style={spanStyle}>Level</span> - {exercise.difficulty}
+                  </StyledTitle>
                 </Typography>
                 <Typography sx={{ fontSize: 14 }}>
-                  Name - {exercise.name}
+                  <span style={spanStyle}>Name</span> - {exercise.name}
                 </Typography>
                 <Typography sx={{ fontSize: 14 }}>
-                  Type - {exercise.type}
+                  <span style={spanStyle}>Type</span> - {exercise.type}
                 </Typography>
                 <Typography sx={{ fontSize: 14 }}>
-                  Muscle - {exercise.muscle}
+                  <span style={spanStyle}>Muscle</span> - {exercise.muscle}
                 </Typography>
                 <Typography sx={{ fontSize: 14 }}>
-                  Equipment - {exercise.equipment}
+                  <span style={spanStyle}>Equipment</span> -{" "}
+                  {exercise.equipment}
                 </Typography>
-                <Accordion>
+                <Accordion style={accordionStyle}>
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
@@ -97,7 +111,7 @@ const IntermediateCard = () => {
                     <Typography>{exercise.instructions}</Typography>
                   </AccordionDetails>
                 </Accordion>
-              </CardContent>
+              </StyledCardContent>
             </StyledCard>
           </Grid>
         ))}

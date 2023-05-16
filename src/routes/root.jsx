@@ -14,9 +14,9 @@ import Typography from "@mui/material/Typography";
 import Level from "../components/Level";
 import Muscle from "../components/Muscle";
 import Type from "../components/Type";
-import BeginnerCard from "../components/BeginnerCard";
-import IntermediateCard from "../components/IntermediateCard";
-import ExpertCard from "../components/ExpertCard";
+
+import { styled } from "@mui/system";
+
 
 import { Outlet } from "react-router-dom";
 
@@ -48,6 +48,18 @@ function Root(props) {
     </div>
   );
 
+  const StyledToolBar = styled(Toolbar)`
+    background-color: #637081;
+  `;
+
+
+  const StyledTitle = styled(Typography)`
+    color: #ffff;
+    font-weight: bold;
+    font-size: 25px;
+    padding-left: 3px;
+  `;
+
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -61,7 +73,7 @@ function Root(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <StyledToolBar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -72,9 +84,11 @@ function Root(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
+          <StyledTitle>
             Exercise Library
+            </StyledTitle>
           </Typography>
-        </Toolbar>
+        </StyledToolBar>
       </AppBar>
       <Box
         component="nav"
