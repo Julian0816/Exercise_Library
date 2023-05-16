@@ -9,8 +9,12 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Type() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Accordion>
@@ -24,37 +28,37 @@ export default function Type() {
         <AccordionDetails>
           <nav aria-label="secondary mailbox folders">
             <List>
-              <ListItem disablePadding>
+              <ListItem disablePadding onClick={() => {navigate('/cardio')}}>
                 <ListItemButton>
                   <ListItemText primary="Cardio" />
                 </ListItemButton>
               </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
+              <ListItem disablePadding onClick={() => {navigate("/olympic_weightlifting")}}>
+                <ListItemButton component="a" >
                   <ListItemText primary="olympic_weightlifting" />
                 </ListItemButton>
               </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
+              <ListItem disablePadding onClick={() => {navigate("/plyometrics")}}>
+                <ListItemButton component="a">
                   <ListItemText primary="plyometrics" />
                 </ListItemButton>
               </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
+              <ListItem disablePadding onClick={() => {navigate("/powerlifting")}}>
+                <ListItemButton component="a">
                   <ListItemText primary="powerlifting" />
                 </ListItemButton>
               </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
+              <ListItem disablePadding onClick={() => {navigate("/strength")}}>
+                <ListItemButton component="a">
                   <ListItemText primary="strength" />
                 </ListItemButton>
               </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton component="a" href="#simple-list">
+              <ListItem disablePadding onClick={() => {navigate("/stretching")}}>
+                <ListItemButton component="a">
                   <ListItemText primary="stretching" />
                 </ListItemButton>
               </ListItem>
-              <ListItem disablePadding>
+              <ListItem disablePadding onClick={() => {navigate("/strongman")}}>
                 <ListItemButton component="a" href="#simple-list">
                   <ListItemText primary="strongman" />
                 </ListItemButton>

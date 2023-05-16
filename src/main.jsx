@@ -6,6 +6,7 @@ import ErrorPage from "./error-page";
 import BeginnerCard from "./components/BeginnerCard";
 import IntermediateCard from "./components/IntermediateCard";
 import ExpertCard from "./components/ExpertCard";
+
 import AbdominalsCard from "./components/AbdominalsCard";
 import AbductorsCard from "./components/AbductorsCard";
 import AdductorsCard from "./components/AdductorsCard";
@@ -22,6 +23,15 @@ import NeckCard from "./components/NeckCard";
 import QuadricepsCard from "./components/QuadricepsCard";
 import TrapsCard from "./components/TrapsCard";
 import TricepsCard from "./components/TricepsCard";
+
+import CardioCard from "./components/CardioCard";
+import OlympicWeightliftingCard from "./components/OlympicWeightliftingCard";
+import PlyometricsCard from "./components/PlyometricsCard";
+import PowerliftingCard from "./components/PowerliftingCard";
+import StrengthCard from "./components/StrengthCard";
+import StrongmanCard from "./components/StrongmanCard";
+import StretchingCard from "./components/StretchingCard";
+
 
 const router = createBrowserRouter([
   {
@@ -122,6 +132,41 @@ const router = createBrowserRouter([
       {
         path: "/triceps",
         element: <TricepsCard />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/cardio",
+        element: <CardioCard />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/olympic_weightlifting",
+        element: <OlympicWeightliftingCard />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/plyometrics",
+        element: <PlyometricsCard />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/powerlifting",
+        element: <PowerliftingCard />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/strength",
+        element: <StrengthCard />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/stretching",
+        element: <StretchingCard />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/strongman",
+        element: <StrongmanCard />,
         errorElement: <ErrorPage />,
       },
     ],
