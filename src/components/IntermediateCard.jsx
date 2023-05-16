@@ -1,44 +1,109 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
-  >
-    •
-  </Box>
-);
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const card = (
-  <React.Fragment>
-    <CardContent>
-      <Typography variant="h5" component="div">
-        Exercise Name
-      </Typography>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Type of exercise
-      </Typography>
-      <Typography variant="body2">Musclse name</Typography>
-      <Typography variant="body2">Equipment</Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small">Instructions</Button>
-    </CardActions>
-  </React.Fragment>
-);
+import { styled } from "@mui/system";
 
-export default function IntermediateCard() {
+
+const IntermediateCard = () => {
+  const [exercises, setExercises] = useState([]);
+
+  const apiKey = import.meta.env.VITE_API_KEY; // TODO fix the issue with the env variable not working
+
+  useEffect(() => {
+    axios
+      .get(`https://api.api-ninjas.com/v1/exercises?difficulty=intermediate`, {
+        headers: {
+          "X-Api-Key": apiKey,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+
+        const exerciseData = response.data.map((exercise) => ({
+          name: exercise.name,
+          type: exercise.type,
+          muscle: exercise.muscle,
+          equipment: exercise.equipment,
+          difficulty: exercise.difficulty,
+          instructions: exercise.instructions,
+        }));
+
+        setExercises(exerciseData);
+      })
+      .catch((error) => {
+        console.error("Request failed:", error);
+      });
+  }, []);
+
+
+  const StyledTitle = styled(Typography)`
+    color: #ead30c;
+    font-weight: bold;
+    text-align: center;
+  `;
+
+  const StyledCard = styled(Card)`
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  `;
+
   return (
     <Box sx={{ minWidth: 275 }}>
-      <Card variant="outlined">{card}</Card>
+      <Grid container spacing={2}>
+        {exercises.map((exercise, index) => (
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <StyledCard variant="outlined">
+              <CardContent>
+                <Typography variant="h6" component="div">
+                  <StyledTitle>Level - {exercise.difficulty}</StyledTitle>
+                </Typography>
+                <Typography sx={{ fontSize: 14 }}>
+                  Name - {exercise.name}
+                </Typography>
+                <Typography sx={{ fontSize: 14 }}>
+                  Type - {exercise.type}
+                </Typography>
+                <Typography sx={{ fontSize: 14 }}>
+                  Muscle - {exercise.muscle}
+                </Typography>
+                <Typography sx={{ fontSize: 14 }}>
+                  Equipment - {exercise.equipment}
+                </Typography>
+                <Accordion>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography>Instructions</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>{exercise.instructions}</Typography>
+                  </AccordionDetails>
+                </Accordion>
+              </CardContent>
+            </StyledCard>
+          </Grid>
+        ))}
+      </Grid>
     </Box>
   );
-}
+};
 
-// TODO Fetch data and display like on the beginnerCard
+export default IntermediateCard;

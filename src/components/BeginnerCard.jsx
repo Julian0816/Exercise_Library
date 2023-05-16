@@ -11,6 +11,9 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
+import { styled } from "@mui/system";
+
+
 const BeginnerCard = () => {
   const [exercises, setExercises] = useState([])
 
@@ -42,17 +45,32 @@ const BeginnerCard = () => {
       });
   }, []);
 
+  const StyledTitle = styled(Typography)`
+    color: green;
+    font-weight: bold;
+    text-align: center;
+  `;
 
+  const StyledCard = styled(Card)`
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  `;
 
   return (
     <Box sx={{ minWidth: 275 }}>
       <Grid container spacing={2}>
         {exercises.map((exercise, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card variant="outlined">
+            <StyledCard variant="outlined">
               <CardContent>
-                <Typography variant="h6" component="div" color="green">
-                  Level - {exercise.difficulty}
+                <Typography variant="h6" component="div">
+                  <StyledTitle>Level - {exercise.difficulty}</StyledTitle>
                 </Typography>
                 <Typography sx={{ fontSize: 14 }}>
                   Name - {exercise.name}
@@ -75,13 +93,11 @@ const BeginnerCard = () => {
                     <Typography>Instructions</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>
-                      {exercise.instructions}
-                    </Typography>
+                    <Typography>{exercise.instructions}</Typography>
                   </AccordionDetails>
                 </Accordion>
               </CardContent>
-            </Card>
+            </StyledCard>
           </Grid>
         ))}
       </Grid>
