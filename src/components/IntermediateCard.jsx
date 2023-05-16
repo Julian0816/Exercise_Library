@@ -81,7 +81,7 @@ const IntermediateCard = () => {
           <Grid item xs={12} sm={6} md={4} key={index}>
             <StyledCard variant="outlined">
               <StyledCardContent>
-                <Typography variant="h6" component="div">
+                <Typography variant="h6" component="div" gutterBottom>
                   <StyledTitle>
                     <span style={spanStyle}>Level</span> - {exercise.difficulty}
                   </StyledTitle>
@@ -95,7 +95,7 @@ const IntermediateCard = () => {
                 <Typography sx={{ fontSize: 14 }}>
                   <span style={spanStyle}>Muscle</span> - {exercise.muscle}
                 </Typography>
-                <Typography sx={{ fontSize: 14 }}>
+                <Typography sx={{ fontSize: 14 }} gutterBottom>
                   <span style={spanStyle}>Equipment</span> -{" "}
                   {exercise.equipment}
                 </Typography>

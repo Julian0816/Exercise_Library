@@ -13,15 +13,14 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { styled } from "@mui/system";
 
-
-const BeginnerCard = () => {
-  const [exercises, setExercises] = useState([])
+const LowerBackCard = () => {
+  const [exercises, setExercises] = useState([]);
 
   const apiKey = import.meta.env.VITE_API_KEY; // TODO fix the issue with the env variable not working
 
   useEffect(() => {
     axios
-      .get(`https://api.api-ninjas.com/v1/exercises?difficulty=beginner`, {
+      .get(`https://api.api-ninjas.com/v1/exercises?muscle=lower_back`, {
         headers: {
           "X-Api-Key": apiKey,
         },
@@ -72,8 +71,8 @@ const BeginnerCard = () => {
   `;
 
   const spanStyle = {
-    fontWeight: "bold"
-  }
+    fontWeight: "bold",
+  };
 
   return (
     <Box sx={{ minWidth: 275 }}>
@@ -84,7 +83,7 @@ const BeginnerCard = () => {
               <StyledCardContent>
                 <Typography variant="h6" component="div" gutterBottom>
                   <StyledTitle>
-                    <span style={spanStyle}>Level</span> - {exercise.difficulty}
+                    <span style={spanStyle}>Muscle</span> - {exercise.muscle}
                   </StyledTitle>
                 </Typography>
                 <Typography sx={{ fontSize: 14 }}>
@@ -94,7 +93,7 @@ const BeginnerCard = () => {
                   <span style={spanStyle}>Type</span> - {exercise.type}
                 </Typography>
                 <Typography sx={{ fontSize: 14 }}>
-                  <span style={spanStyle}>Muscle</span> - {exercise.muscle}
+                  <span style={spanStyle}>Level</span> - {exercise.difficulty}
                 </Typography>
                 <Typography sx={{ fontSize: 14 }} gutterBottom>
                   <span style={spanStyle}>Equipment</span> -{" "}
@@ -121,5 +120,4 @@ const BeginnerCard = () => {
   );
 };
 
-
-export default BeginnerCard;
+export default LowerBackCard;
