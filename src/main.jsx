@@ -41,137 +41,141 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
-      
-      { index: true, element: <Index /> },
       {
-        path: "/beginner",
-        element: <BeginnerCard />,
         errorElement: <ErrorPage />,
-      },
-      {
-        path: "/intermediate",
-        element: <IntermediateCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/expert",
-        element: <ExpertCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/abdominals",
-        element: <AbdominalsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/abductors",
-        element: <AbductorsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/adductors",
-        element: <AdductorsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/biceps",
-        element: <BicepsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/calves",
-        element: <CalvesCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/chest",
-        element: <ChestCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/forearms",
-        element: <ForearmsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/glutes",
-        element: <GlutesCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/hamstrings",
-        element: <HamstringsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/lats",
-        element: <LatsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/lower_back",
-        element: <LowerBackCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/middle_back",
-        element: <MiddleBackCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/neck",
-        element: <NeckCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/quadriceps",
-        element: <QuadricepsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/traps",
-        element: <TrapsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/triceps",
-        element: <TricepsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/cardio",
-        element: <CardioCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/olympic_weightlifting",
-        element: <OlympicWeightliftingCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/plyometrics",
-        element: <PlyometricsCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/powerlifting",
-        element: <PowerliftingCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/strength",
-        element: <StrengthCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/stretching",
-        element: <StretchingCard />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/strongman",
-        element: <StrongmanCard />,
-        errorElement: <ErrorPage />,
+        children: [
+          { index: true, element: <Index /> },
+          {
+            path: "/beginner",
+            element: <BeginnerCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/intermediate",
+            element: <IntermediateCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/expert",
+            element: <ExpertCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/abdominals",
+            element: <AbdominalsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/abductors",
+            element: <AbductorsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/adductors",
+            element: <AdductorsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/biceps",
+            element: <BicepsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/calves",
+            element: <CalvesCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/chest",
+            element: <ChestCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/forearms",
+            element: <ForearmsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/glutes",
+            element: <GlutesCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/hamstrings",
+            element: <HamstringsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/lats",
+            element: <LatsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/lower_back",
+            element: <LowerBackCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/middle_back",
+            element: <MiddleBackCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/neck",
+            element: <NeckCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/quadriceps",
+            element: <QuadricepsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/traps",
+            element: <TrapsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/triceps",
+            element: <TricepsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/cardio",
+            element: <CardioCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/olympic_weightlifting",
+            element: <OlympicWeightliftingCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/plyometrics",
+            element: <PlyometricsCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/powerlifting",
+            element: <PowerliftingCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/strength",
+            element: <StrengthCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/stretching",
+            element: <StretchingCard />,
+            // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/strongman",
+            element: <StrongmanCard />,
+            // errorElement: <ErrorPage />,
+          },
+        ],
       },
     ],
   },
@@ -182,3 +186,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+
+//TODO Add some feedback to inform the user that the page is loading
