@@ -84,9 +84,7 @@ function Root(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-          <StyledTitle>
-            Exercise Library
-            </StyledTitle>
+            <StyledTitle>Exercise Library</StyledTitle>
           </Typography>
         </StyledToolBar>
       </AppBar>

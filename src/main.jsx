@@ -32,6 +32,8 @@ import StrengthCard from "./components/StrengthCard";
 import StrongmanCard from "./components/StrongmanCard";
 import StretchingCard from "./components/StretchingCard";
 
+import Index from "./components";
+
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,8 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
+      
+      { index: true, element: <Index /> },
       {
         path: "/beginner",
         element: <BeginnerCard />,
