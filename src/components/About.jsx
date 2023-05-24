@@ -44,7 +44,7 @@ export default function About() {
         <span>
           <h4>About Me:</h4>
           <p>
-            Hi, I'm [Your Name], a passionate junior software developer and
+            Hi, I'm Julian, a passionate junior software developer and
             fitness enthusiast. I created this application to combine my love
             for coding and fitness, aiming to provide a user-friendly platform
             that helps individuals achieve their fitness goals effectively. As a

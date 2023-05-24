@@ -20,7 +20,7 @@ export default function Index() {
         </span>
         <span>
           <h3>
-            To find an exercise, select a caegory on the menu and filter by:
+            To find an exercise, select a caegory on the left and filter by:
           </h3>
         </span>
         <span>Fitness Level, Muscle or Type</span>
