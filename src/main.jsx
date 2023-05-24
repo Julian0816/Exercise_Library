@@ -32,8 +32,6 @@ import StrengthCard from "./components/StrengthCard";
 import StrongmanCard from "./components/StrongmanCard";
 import StretchingCard from "./components/StretchingCard";
 
-import RecipeSelection from "./components/Meat";
-
 import About from "./pages/About";
 
 import Index from "./components";
