@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import Level from "../components/Level";
 import Muscle from "../components/Muscle";
 import Type from "../components/Type";
+import Recipes from "../components/Recipes";
 
 import { styled } from "@mui/system";
 
@@ -44,6 +45,9 @@ function Root(props) {
       </List>
       <List>
         <Type />
+      </List>
+      <List>
+        <Recipes />
       </List>
       <Divider />
     </div>
