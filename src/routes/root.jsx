@@ -10,6 +10,7 @@ import List from "@mui/material/List";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 import Level from "../components/Level";
 import Muscle from "../components/Muscle";
@@ -86,6 +87,26 @@ function Root(props) {
           <Typography variant="h6" noWrap component="div">
             <StyledTitle>Exercise Library</StyledTitle>
           </Typography>
+          <div style={{ marginLeft: "auto" }}>
+            {" "}
+            {/* Aligns the following links to the right */}
+            <Link
+              to="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                marginRight: "10px",
+              }}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              About
+            </Link>
+          </div>
         </StyledToolBar>
       </AppBar>
       <Box
