@@ -14,6 +14,9 @@ import ListItemText from "@mui/material/ListItemText";
 import { useNavigate } from "react-router-dom";
 
 const Recipes = () => {
+  const navigate = useNavigate();
+
+
     return (
       <div>
         <Accordion>
@@ -22,7 +25,7 @@ const Recipes = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>Recipes</Typography>
+            <Typography>Recipes (Our Selection)</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <nav aria-label="secondary mailbox folders">
@@ -30,11 +33,51 @@ const Recipes = () => {
                 <ListItem
                   disablePadding
                   onClick={() => {
-                    navigate("/selection");
+                    navigate("/meat");
                   }}
                 >
                   <ListItemButton>
-                    <ListItemText primary="Our Selection" />
+                    <ListItemText primary="Meat" />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem
+                  disablePadding
+                  onClick={() => {
+                    navigate("/chicken");
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemText primary="Chicken" />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem
+                  disablePadding
+                  onClick={() => {
+                    navigate("/fish");
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemText primary="Fish" />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem
+                  disablePadding
+                  onClick={() => {
+                    navigate("/vegetarian");
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemText primary="Vegetarian" />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem
+                  disablePadding
+                  onClick={() => {
+                    navigate("/vegan");
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemText primary="Vegan" />
                   </ListItemButton>
                 </ListItem>
               </List>

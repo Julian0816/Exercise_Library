@@ -32,9 +32,16 @@ import StrengthCard from "./components/StrengthCard";
 import StrongmanCard from "./components/StrongmanCard";
 import StretchingCard from "./components/StretchingCard";
 
+import RecipeSelection from "./components/Meat";
+
 import About from "./pages/About";
 
 import Index from "./components";
+import Meat from "./components/Meat";
+import Chicken from "./components/Chicken";
+import Fish from "./components/Fish";
+import Vegetarian from "./components/Vegetarian";
+import Vegan from "./components/Vegan";
 
 
 const router = createBrowserRouter([
@@ -49,7 +56,7 @@ const router = createBrowserRouter([
           { index: true, element: <Index /> },
           {
             path: "/about",
-            element: <About />
+            element: <About />,
           },
           {
             path: "/beginner",
@@ -180,6 +187,26 @@ const router = createBrowserRouter([
             path: "/strongman",
             element: <StrongmanCard />,
             // errorElement: <ErrorPage />,
+          },
+          {
+            path: "/meat",
+            element: <Meat />,
+          },
+          {
+            path: "/chicken",
+            element: <Chicken />,
+          },
+          {
+            path: "/fish",
+            element: <Fish />,
+          },
+          {
+            path: "/vegetarian",
+            element: <Vegetarian />,
+          },
+          {
+            path: "/vegan",
+            element: <Vegan />,
           },
         ],
       },

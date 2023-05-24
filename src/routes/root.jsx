@@ -10,12 +10,15 @@ import List from "@mui/material/List";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
 
 import Level from "../components/Level";
 import Muscle from "../components/Muscle";
 import Type from "../components/Type";
 import Recipes from "../components/Recipes";
+
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 
 import { styled } from "@mui/system";
 
@@ -61,7 +64,7 @@ function Root(props) {
   const StyledTitle = styled(Typography)`
     color: #ffff;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
     padding-left: 3px;
   `;
 
@@ -91,7 +94,7 @@ function Root(props) {
           <Typography variant="h6" noWrap component="div">
             <StyledTitle>Exercise Library</StyledTitle>
           </Typography>
-          <div style={{ marginLeft: "auto" }}>
+          <div style={{ marginLeft: "auto", paddingRight: "10px" }}>
             {" "}
             {/* Aligns the following links to the right */}
             <Link
@@ -111,6 +114,7 @@ function Root(props) {
               About
             </Link>
           </div>
+          <FitnessCenterIcon size="large" aria-label="fitnessCenterIcon" />
         </StyledToolBar>
       </AppBar>
       <Box
