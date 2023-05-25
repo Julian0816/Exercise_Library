@@ -103,9 +103,9 @@ export default function Muscle() {
                   <ListItemText primary="traps" />
                 </ListItemButton>
               </ListItem>
-              <ListItem disablePadding onClick={() => {navigate("/ticeps");}}>
+              <ListItem disablePadding onClick={() => {navigate("/triceps");}}>
                 <ListItemButton component="a">
-                  <ListItemText primary="ticeps" />
+                  <ListItemText primary="triceps" />
                 </ListItemButton>
               </ListItem>
             </List>

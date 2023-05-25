@@ -72,7 +72,7 @@ function Root(props) {
   const StyledTitle = styled(Typography)`
     color: #ffff;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
     padding-left: 3px;
   `;
 
@@ -100,7 +100,7 @@ function Root(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            <StyledTitle>Exercise Library</StyledTitle>
+            <StyledTitle>E-L</StyledTitle>
           </Typography>
           <div style={{ marginLeft: "auto", paddingRight: "10px" }}>
             {" "}
