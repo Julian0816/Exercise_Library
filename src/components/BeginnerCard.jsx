@@ -1,7 +1,7 @@
-import CardTemplate from "./CardTemplate";
+import CardTemplateLevel from "./CardTemplateLevel";
 
 const BeginnerCard = () => {
-  return <CardTemplate level={"beginner"} />;
+  return <CardTemplateLevel level={"beginner"} />;
 };
 
 export default BeginnerCard;

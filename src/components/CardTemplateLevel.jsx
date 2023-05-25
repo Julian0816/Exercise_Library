@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { styled } from "@mui/system";
 
-const CardTemplate = (props) => {
+const CardTemplateLevel = (props) => {
   const [exercises, setExercises] = useState([]);
 
   const apiKey = import.meta.env.VITE_API_KEY; // TODO fix the issue with the env variable not working
@@ -120,4 +120,4 @@ const CardTemplate = (props) => {
   );
 };
 
-export default CardTemplate;
+export default CardTemplateLevel;

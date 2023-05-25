@@ -1,7 +1,7 @@
-import CardTemplate from "./CardTemplate";
+import CardTemplateLevel from "./CardTemplateLevel";
 
 const ExpertCard = () => {
-  return <CardTemplate level={"expert"} />;
+  return <CardTemplateLevel level={"expert"} />;
 };
 
 export default ExpertCard;
