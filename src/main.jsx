@@ -46,7 +46,9 @@ import Fish from "./components/recipeComponents/Fish";
 import Vegetarian from "./components/recipeComponents/Vegetarian";
 import Vegan from "./components/recipeComponents/Vegan";
 
+// Impoer Pages
 import About from "./pages/About";
+import Music from "./pages/Music";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +63,10 @@ const router = createBrowserRouter([
           {
             path: "/about",
             element: <About />,
+          },
+          {
+            path: "/music",
+            element: <Music />,
           },
           {
             path: "/beginner",

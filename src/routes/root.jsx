@@ -106,18 +106,34 @@ function Root(props) {
             {" "}
             {/* Aligns the following links to the right */}
             <Link
+              to="/music"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                marginRight: "10px",
+                fontWeight: "bold",
+              }}
+            >
+              Music
+            </Link>
+            <Link
               to="/"
               style={{
                 textDecoration: "none",
                 color: "inherit",
                 marginRight: "10px",
+                fontWeight: "bold",
               }}
             >
               Home
             </Link>
             <Link
               to="/about"
-              style={{ textDecoration: "none", color: "inherit" }}
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+                fontWeight: "bold",
+              }}
             >
               About
             </Link>
@@ -191,7 +207,8 @@ function Root(props) {
               borderRadius: "4px",
             }}
           />
-        </div> {/**TODO: Search bar functionality */}
+        </div>{" "}
+        {/**TODO: Search bar functionality */}
         <Outlet />
         <Typography paragraph></Typography>
       </Box>
