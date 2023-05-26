@@ -1,4 +1,4 @@
-import CardTemplateType from "./CardTemplateType";
+import CardTemplateType from "../CardTemplateType";
 
 const PlyometricsCard = () => {
   return <CardTemplateType type={"plyometrics"} />;

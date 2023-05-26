@@ -1,4 +1,4 @@
-import CardTemplateType from "./CardTemplateType";
+import CardTemplateType from "../CardTemplateType";
 
 const StretchingCard = () => {
   return <CardTemplateType type={"stretching"} />;
