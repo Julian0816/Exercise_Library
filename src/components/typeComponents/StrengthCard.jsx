@@ -1,4 +1,4 @@
-import CardTemplateType from "./CardTemplateType";
+import CardTemplateType from "../CardTemplateType";
 
 const StrengthCard = () => {
   return <CardTemplateType type={"strength"} />;

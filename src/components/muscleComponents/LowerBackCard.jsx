@@ -1,4 +1,4 @@
-import CardTemplateMuscle from "./CardTemplateMuscle";
+import CardTemplateMuscle from "../CardTemplateMuscle";
 
 const LowerBackCard = () => {
   return <CardTemplateMuscle muscle={"lower_back"} />;

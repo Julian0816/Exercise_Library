@@ -1,4 +1,4 @@
-import CardRecipeMeatTemplate from "./CardRecipeMeatTemplate";
+import CardRecipeMeatTemplate from "../CardRecipeMeatTemplate";
 
 const Fish = () => {
   return <CardRecipeMeatTemplate query={"fish"} />;
