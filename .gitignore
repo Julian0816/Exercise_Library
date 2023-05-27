@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Spotify Curl POST to get token as it only last one hour
+curl -X POST "https://accounts.spotify.com/api/token" \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     -d "grant_type=client_credentials&client_id=e283c67f68af4f998482c3a3682a8d39&client_secret=15312b524b304c8a9627ca1c7877e749"
