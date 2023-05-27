@@ -17,9 +17,9 @@ import Level from "../components/Level";
 import Muscle from "../components/Muscle";
 import Type from "../components/Type";
 import Recipes from "../components/Recipes";
+import SearchBar from "../components/SearchBar";
 
-import InputBase from "@mui/material/InputBase";
-import SearchIcon from "@mui/icons-material/Search";
+
 
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
 
@@ -34,15 +34,12 @@ const drawerWidth = 240;
 function Root(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [searchQuery, setSearchQuery] = React.useState("");
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const handleSearchChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
+  
 
   const drawer = (
     <div>
@@ -59,6 +56,9 @@ function Root(props) {
       </List>
       <List>
         <Recipes />
+      </List>
+      <List>
+        <SearchBar />
       </List>
       <Divider />
     </div>
@@ -188,26 +188,7 @@ function Root(props) {
         }}
       >
         <Toolbar />
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginBottom: "16px",
-          }}
-        >
-          <SearchIcon style={{ marginRight: "8px" }} />
-          <InputBase
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-            style={{
-              color: "#000",
-              backgroundColor: "#f5f5f5",
-              padding: "6px 12px",
-              borderRadius: "4px",
-            }}
-          />
-        </div>{" "}
+        
         {/**TODO: Search bar functionality */}
         <Outlet />
         <Typography paragraph></Typography>
