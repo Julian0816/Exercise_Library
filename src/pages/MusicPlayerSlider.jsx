@@ -29,7 +29,7 @@ const CenteredContainer = styled(Container)`
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
   borderRadius: 16,
-  width: 343,
+  width: 686,
   maxWidth: "100%",
   margin: "auto",
   position: "relative",
@@ -40,8 +40,8 @@ const Widget = styled("div")(({ theme }) => ({
 }));
 
 const CoverImage = styled("div")({
-  width: 100,
-  height: 100,
+  width: 200,
+  height: 200,
   objectFit: "cover",
   overflow: "hidden",
   flexShrink: 0,
@@ -129,7 +129,8 @@ export default function MusicPlayerSlider() {
                 <b>{owner?.artistName}</b>
               </Typography>
               <Typography noWrap letterSpacing={-0.25}>
-                If you had one shot, or one opportunity
+                If you had one shot, or one opportunity to seize everything you
+                ever wanted
               </Typography>
             </Box>
           </Box>
