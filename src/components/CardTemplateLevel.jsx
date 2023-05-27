@@ -12,38 +12,22 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { styled } from "@mui/system";
+import { levelService } from "../services/levelService";
 
 const CardTemplateLevel = (props) => {
   const [exercises, setExercises] = useState([]);
 
-  const apiKey = import.meta.env.VITE_API_KEY; // TODO fix the issue with the env variable not working
-
+  // Service
   useEffect(() => {
-    axios
-      .get(`https://api.api-ninjas.com/v1/exercises?difficulty=${props.level}`, {
-        headers: {
-          "X-Api-Key": apiKey,
-        },
-      })
-      .then((response) => {
-        console.log(response.data);
+    const fetchData = async () => {
+      const exerciseData = await levelService(props.level);
+      setExercises(exerciseData);
+    };
 
-        const exerciseData = response.data.map((exercise) => ({
-          name: exercise.name,
-          type: exercise.type,
-          muscle: exercise.muscle,
-          equipment: exercise.equipment,
-          difficulty: exercise.difficulty,
-          instructions: exercise.instructions,
-        }));
+    fetchData();
+  }, [props.level]);
 
-        setExercises(exerciseData);
-      })
-      .catch((error) => {
-        console.error("Request failed:", error);
-      });
-  }, []);
-
+  //Styled Components
   const StyledTitle = styled(Typography)`
     color: #536b78;
     font-weight: bold;
