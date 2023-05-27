@@ -25,6 +25,12 @@ const CenteredContainer = styled(Container)`
   padding: 16px;
 `;
 
+const Title = styled(Typography)`
+  font-size: 48px;
+  margin-bottom: 16px;
+  font-weight: bold;
+`;
+
 
 const Widget = styled("div")(({ theme }) => ({
   padding: 16,
@@ -111,6 +117,9 @@ export default function MusicPlayerSlider() {
 
   return (
     <CenteredContainer>
+      <Title variant="h1" align="center">
+        Enjoy some music while working out but &#129323;
+      </Title>
       <Box sx={{ width: "100%", overflow: "hidden" }}>
         <Widget>
           <Box sx={{ display: "flex", alignItems: "center" }}>
