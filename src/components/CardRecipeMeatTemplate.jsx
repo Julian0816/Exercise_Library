@@ -12,35 +12,23 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { styled } from "@mui/system";
+import { recipeService } from "../services/recipeService";
 
 const CardRecipeMeatTemplate = (props) => {
   const [recipes, setRecipes] = useState([]);
   const apiKey = import.meta.env.VITE_API_KEY; // TODO fix the issue with the env variable not working
 
+  // Service
   useEffect(() => {
-    axios
-      .get(`https://api.api-ninjas.com/v1/recipe?query=${props.query}&=`, {
-        headers: {
-          "X-Api-Key": apiKey,
-        },
-      })
-      .then((response) => {
-        console.log(response.data);
+    const fetchData = async () => {
+      const recipeData = await recipeService(props.query);
+      setRecipes(recipeData);
+    };
 
-        const recipeData = response.data.map((recipe) => ({
-          title: recipe.title,
-          ingredients: recipe.ingredients,
-          servings: recipe.servings,
-          instructions: recipe.instructions,
-        }));
+    fetchData();
+  }, [props.query]);
 
-        setRecipes(recipeData);
-      })
-      .catch((error) => {
-        console.error("Request failed:", error);
-      });
-  }, []);
-
+  // Styled Components
   const StyledTitle = styled(Typography)`
     color: #536b78;
     font-weight: bold;
