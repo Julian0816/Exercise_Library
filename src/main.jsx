@@ -48,7 +48,7 @@ import Vegan from "./components/recipeComponents/Vegan";
 
 // Impoer Pages
 import About from "./pages/About";
-import Music from "./pages/Music";
+import MusicPlayerSlider from "./pages/MusicPlayerSlider";
 
 const router = createBrowserRouter([
   {
@@ -66,7 +66,7 @@ const router = createBrowserRouter([
           },
           {
             path: "/music",
-            element: <Music />,
+            element: <MusicPlayerSlider />,
           },
           {
             path: "/beginner",
