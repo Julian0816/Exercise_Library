@@ -45,6 +45,7 @@ import Chicken from "./components/recipeComponents/Chicken";
 import Fish from "./components/recipeComponents/Fish";
 import Vegetarian from "./components/recipeComponents/Vegetarian";
 import Vegan from "./components/recipeComponents/Vegan";
+import RecipeSearch from "./components/recipeComponents/RecipeSearch";
 
 // Impoer Pages
 import About from "./pages/About";
@@ -217,6 +218,10 @@ const router = createBrowserRouter([
           {
             path: "/vegan",
             element: <Vegan />,
+          },
+          {
+            path: "/search",
+            element: <RecipeSearch />,
           },
         ],
       },

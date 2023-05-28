@@ -80,6 +80,16 @@ const Recipes = () => {
                     <ListItemText primary="Vegan" />
                   </ListItemButton>
                 </ListItem>
+                <ListItem
+                  disablePadding
+                  onClick={() => {
+                    navigate("/search");
+                  }}
+                >
+                  <ListItemButton>
+                    <ListItemText primary="Search yours" />
+                  </ListItemButton>
+                </ListItem>
               </List>
             </nav>
           </AccordionDetails>

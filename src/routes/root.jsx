@@ -17,7 +17,7 @@ import Level from "../components/Level";
 import Muscle from "../components/Muscle";
 import Type from "../components/Type";
 import Recipes from "../components/Recipes";
-import SearchBar from "../components/SearchBar";
+// import SearchBar from "../components/SearchBar";
 
 
 
@@ -56,9 +56,6 @@ function Root(props) {
       </List>
       <List>
         <Recipes />
-      </List>
-      <List>
-        <SearchBar />
       </List>
       <Divider />
     </div>
@@ -188,8 +185,6 @@ function Root(props) {
         }}
       >
         <Toolbar />
-        
-        {/**TODO: Search bar functionality */}
         <Outlet />
         <Typography paragraph></Typography>
       </Box>
