@@ -13,16 +13,19 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { styled } from "@mui/system";
 import { recipeService } from "../services/recipeService";
+import Loader from "../Loader";
 
 const CardRecipeMeatTemplate = (props) => {
   const [recipes, setRecipes] = useState([]);
-  const apiKey = import.meta.env.VITE_API_KEY; // TODO fix the issue with the env variable not working
+  const [isLoading, setIsLoading] = useState(true);
 
   // Service
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const recipeData = await recipeService(props.query);
       setRecipes(recipeData);
+      setIsLoading(false);
     };
 
     fetchData();
@@ -61,55 +64,59 @@ const CardRecipeMeatTemplate = (props) => {
 
   return (
     <Box sx={{ minWidth: 275 }}>
-      <Grid container spacing={2}>
-        {recipes.map((recipe, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <StyledCard variant="outlined">
-              <StyledCardContent>
-                <Typography variant="h6" component="div" gutterBottom>
-                  <StyledTitle>{recipe.title}</StyledTitle>
-                </Typography>
-                <Accordion style={accordionStyle}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Ingredients</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>{recipe.ingredients}</Typography>
-                  </AccordionDetails>
-                </Accordion>
-                <Accordion style={accordionStyle}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Servings</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>{recipe.servings}</Typography>
-                  </AccordionDetails>
-                </Accordion>
-                <Accordion style={accordionStyle}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Instructions</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>{recipe.instructions}</Typography>
-                  </AccordionDetails>
-                </Accordion>
-              </StyledCardContent>
-            </StyledCard>
-          </Grid>
-        ))}
-      </Grid>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Grid container spacing={2}>
+          {recipes.map((recipe, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <StyledCard variant="outlined">
+                <StyledCardContent>
+                  <Typography variant="h6" component="div" gutterBottom>
+                    <StyledTitle>{recipe.title}</StyledTitle>
+                  </Typography>
+                  <Accordion style={accordionStyle}>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography>Ingredients</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{recipe.ingredients}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion style={accordionStyle}>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography>Servings</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{recipe.servings}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                  <Accordion style={accordionStyle}>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography>Instructions</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{recipe.instructions}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </StyledCardContent>
+              </StyledCard>
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </Box>
   );
 };

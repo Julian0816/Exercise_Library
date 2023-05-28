@@ -13,15 +13,20 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import { styled } from "@mui/system";
 import { typeService } from "../services/typeService";
+import Loader from "../Loader";
+
 
 const CardTemplateType = (props) => {
   const [exercises, setExercises] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Service
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const exerciseData = await typeService(props.type);
       setExercises(exerciseData);
+      setIsLoading(false);
     };
 
     fetchData();
@@ -60,46 +65,51 @@ const CardTemplateType = (props) => {
 
   return (
     <Box sx={{ minWidth: 275 }}>
-      <Grid container spacing={2}>
-        {exercises.map((exercise, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <StyledCard variant="outlined">
-              <StyledCardContent>
-                <Typography variant="h6" component="div" gutterBottom>
-                  <StyledTitle>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Grid container spacing={2}>
+          {exercises.map((exercise, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <StyledCard variant="outlined">
+                <StyledCardContent>
+                  <Typography variant="h6" component="div" gutterBottom>
+                    <StyledTitle>
+                      <span style={spanStyle}>Level</span> -{" "}
+                      {exercise.difficulty}
+                    </StyledTitle>
+                  </Typography>
+                  <Typography sx={{ fontSize: 14 }}>
+                    <span style={spanStyle}>Name</span> - {exercise.name}
+                  </Typography>
+                  <Typography sx={{ fontSize: 14 }}>
                     <span style={spanStyle}>Type</span> - {exercise.type}
-                  </StyledTitle>
-                </Typography>
-                <Typography sx={{ fontSize: 14 }}>
-                  <span style={spanStyle}>Name</span> - {exercise.name}
-                </Typography>
-                <Typography sx={{ fontSize: 14 }}>
-                  <span style={spanStyle}>muscle</span> - {exercise.muscle}
-                </Typography>
-                <Typography sx={{ fontSize: 14 }}>
-                  <span style={spanStyle}>Level</span> - {exercise.difficulty}
-                </Typography>
-                <Typography sx={{ fontSize: 14 }} gutterBottom>
-                  <span style={spanStyle}>Equipment</span> -{" "}
-                  {exercise.equipment}
-                </Typography>
-                <Accordion style={accordionStyle}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                    <Typography>Instructions</Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>{exercise.instructions}</Typography>
-                  </AccordionDetails>
-                </Accordion>
-              </StyledCardContent>
-            </StyledCard>
-          </Grid>
-        ))}
-      </Grid>
+                  </Typography>
+                  <Typography sx={{ fontSize: 14 }}>
+                    <span style={spanStyle}>Muscle</span> - {exercise.muscle}
+                  </Typography>
+                  <Typography sx={{ fontSize: 14 }} gutterBottom>
+                    <span style={spanStyle}>Equipment</span> -{" "}
+                    {exercise.equipment}
+                  </Typography>
+                  <Accordion style={accordionStyle}>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography>Instructions</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{exercise.instructions}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </StyledCardContent>
+              </StyledCard>
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </Box>
   );
 };
