@@ -21,15 +21,9 @@ const RecipeSearch = (props) => {
 
 
   useEffect(() => {
-
-const apiKey = import.meta.env.VITE_API_KEY;
-
-
     const fetchData = async () => {
-      const headers = {
-        "X-Api-Key": apiKey,
-      };
-      const recipeData = await recipeService(searchQuery, headers);
+      
+      const recipeData = await recipeService(searchQuery);
       setRecipes(recipeData);
     };
 
